@@ -22,14 +22,12 @@ import java.util.List;
 
 import de.sormuras.bartholdy.Result;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import platform.tooling.support.Request;
 
 /**
  * @since 1.4
  */
-@Disabled("modules")
 class MultiReleaseJarTests {
 
 	@Test
@@ -110,6 +108,9 @@ class MultiReleaseJarTests {
 			"" //
 		);
 		var result = mvn(variant);
+
+		result.getOutputLines("out").forEach(System.out::println);
+		result.getOutputLines("err").forEach(System.err::println);
 
 		assertEquals(1, result.getExitCode(), result.toString());
 		assertEquals("", result.getOutput("err"));

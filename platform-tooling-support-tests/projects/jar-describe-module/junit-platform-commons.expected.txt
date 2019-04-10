@@ -1,5 +1,3 @@
-releases: 9
-
 org.junit.platform.commons@${platformVersion} jar:file:.+junit-platform-commons/build/libs/junit-platform-commons-${platformVersion}.jar/!module-info.class
 exports org.junit.platform.commons
 exports org.junit.platform.commons.annotation
